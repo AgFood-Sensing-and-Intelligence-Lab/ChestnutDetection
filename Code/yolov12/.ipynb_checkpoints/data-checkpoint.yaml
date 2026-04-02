@@ -1,0 +1,6 @@
+names:
+- '0'
+nc: 1
+test: /root/autodl-tmp/data825/3/images/test
+train: /root/autodl-tmp/data825/3/images/train
+val: /root/autodl-tmp/data825/3/images/val

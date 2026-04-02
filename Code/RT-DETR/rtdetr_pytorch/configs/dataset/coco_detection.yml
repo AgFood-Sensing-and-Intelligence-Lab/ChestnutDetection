@@ -1,0 +1,37 @@
+task: detection
+
+num_classes: 1
+remap_mscoco_category: False
+
+train_dataloader: 
+  type: DataLoader
+  dataset: 
+    type: CocoDetection
+    img_folder: /root/autodl-tmp/train1
+    ann_file: /root/autodl-tmp/coco_train_singleclass_wh_bboxfixed_rotated1.json
+    transforms:
+      type: Compose
+      ops: ~
+  shuffle: True
+  batch_size: 8
+  num_workers: 4
+  drop_last: True 
+
+
+val_dataloader:
+  type: DataLoader
+  dataset: 
+    type: CocoDetection
+    #img_folder: /root/autodl-tmp/valid1
+    #ann_file: /root/autodl-tmp/coco_valid_singleclass_wh_bboxfixed_rotated1.json
+
+    img_folder: /root/autodl-tmp/test_rotated/images1
+    ann_file: /root/autodl-tmp/test_rotated/coco_test_rotated1.json
+    transforms:
+      type: Compose
+      ops: ~ 
+
+  shuffle: False
+  batch_size: 8
+  num_workers: 4
+  drop_last: False
